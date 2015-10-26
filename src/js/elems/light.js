@@ -1,15 +1,17 @@
 (function() {
   'use strict';
 
-  function Menu() {}
+  function Light(game, x, y) {
+      Phaser.Sprite.call(game, x, y, 'light');
+  }
 
-  Menu.prototype = {
+  Light.prototype = {
+    preload: function(){
+      this.game.load.image('light', '/assets/preloader.gif');
+    },
+
     create: function () {
-      var text = this.add.text(this.game.width * 0.5, this.game.height * 0.5,
-        'MENU', {font: '42px Arial', fill: '#ffffff', align: 'center'
-      });
-      text.anchor.set(0.5);
-      this.game.stage.backgroundColor = 0x4488cc;
+
       this.LIGHT_RADIUS = 100;
 
       this.shadowTexture = this.game.add.bitmapData(this.game.width, this.game.height);
@@ -20,15 +22,6 @@
       // everything below this sprite.
       lightSprite.blendMode = Phaser.blendModes.MULTIPLY;
 
-      // Simulate a pointer click/tap input at the center of the stage
-      // when the example begins running.
-      this.game.input.activePointer.x = this.game.width/2;
-      this.game.input.activePointer.y = this.game.height/2
-
-      this.lights = this.game.add.group();
-
-      this.lights.add(new bib.Light(this.game, 200, 150));
-      this.lights.add(new bib.Light(this.game, this.game.width-200, 150));
     },
 
     update: function () {
@@ -49,5 +42,5 @@
   };
 
   window['bib'] = window['bib'] || {};
-  window['bib'].Menu = Menu;
+  window['bib'].Light = Light;
 }());
