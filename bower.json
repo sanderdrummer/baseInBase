@@ -1,10 +1,17 @@
 {
   "name": "bib",
   "version": "0.0.0",
-  "authors": [
-    ""
-  ],
   "dependencies": {
     "phaser-official": "latest"
-  }
+  },
+  "homepage": "https://github.com/sanderdrummer/baseInBase",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ]
 }
