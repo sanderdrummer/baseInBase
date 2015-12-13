@@ -1,34 +1,22 @@
 {
-  "name": "bib",
-  "description": "",
-  "readme": "",
-  "repository": "",
   "version": "0.0.0",
-  "dependencies": {},
-
-  "devDependencies": {
-    "bower": "*",
+  "name": "baseinbase",
+  "version": "0.0.0",
+  "author": "",
+  "license": "MIT",
+  
+  "repository": "sanderdrummer/baseInBase",
+  "author": "sanderdrummer",
+  
+  "dependencies": {
+    "browserify": "*",
     "gulp": "*",
-    "gulp-util": "*",
-    "gulp-concat": "*",
-    "gulp-download": "*",
-    "gulp-rename": "*",
-    "gulp-minify-css": "*",
-    "gulp-minify-html": "*",
-    "gulp-processhtml": "*",
-    "gulp-jshint": "*",
-    "gulp-uglify": "*",
     "gulp-connect": "*",
-    "gulp-watch": "*",
-    "tiny-lr": "*",
-	"del": "*"
-  },
-
-  "scripts": {
-    "post-install": "node ./node_modules/bower/bin/bower install",
-    "start": "node ./node_modules/gulp/bin/gulp.js",
-
-    "build": "node ./node_modules/gulp/bin/gulp.js build",
-    "lint":  "node ./node_modules/gulp/bin/gulp.js lint"
+    "gulp-livereload": "*",
+    "gulp-rsync": "*",
+    "gulp-util": "*",
+    "phaser": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
   }
 }
