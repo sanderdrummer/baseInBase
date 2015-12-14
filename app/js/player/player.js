@@ -13,7 +13,7 @@ var Player = {
     this.game = game;
 
     // create player sprite
-    this.sprite = this.game.add.sprite(10, 10, 'mushroom');
+    this.sprite = this.game.add.sprite(10, 10, 'samus');
 
     // enable basic physics for player sprite
     this.game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
@@ -21,6 +21,12 @@ var Player = {
     this.sprite.body.gravity.y = 1000;
     this.sprite.body.maxVelocity.y = 500;
     this.sprite.body.setSize(20, 32, 5, 16);
+
+    this.sprite.anchor.setTo(0.5, 0.5);
+    this.sprite.scale.setTo(2, 2);
+
+    this.sprite.animations.add('run');
+    this.sprite.animations.play('run', 10, true);
 
     // hook the camera to the player sprite
     // use FOLLOW_LOCKON as follow style
