@@ -7,11 +7,11 @@ var Light = function (game, x, y, rotateSpeed) {
 
     this.LIGHT_RADIUS = 100;
     this.shadowTexture = this.game.add.bitmapData(this.game.width, this.game.height);
-    var lightSprite = this.game.add.image(x, y, this.shadowTexture);
-
+    this.lightSprite = this.game.add.image(x, y, this.shadowTexture);
+    // this.shadowTexture.fixedToCamera = true;
         // Set the blend mode to MULTIPLY. This will darken the colors of
         // everything below this sprite.
-    lightSprite.blendMode = Phaser.blendModes.MULTIPLY;
+    this.lightSprite.blendMode = Phaser.blendModes.MULTIPLY;
 
     this.rotateSpeed = rotateSpeed;
 
