@@ -24,7 +24,8 @@ var PreloaderScene = {
     this.game.load.image('logo', 'images/phaser.png');
     this.game.load.image('mushroom', 'images/sprites/mushroom.png');
     this.game.load.image('light', 'images/sprites/mushroom.png');
-    this.game.load.spritesheet('samus', 'images/sprites/samus.png', 37, 45, 18);
+    this.game.load.spritesheet('samus', 'images/sprites/samus.png', 40, 50, 1);
+    this.game.load.spritesheet('samusWalking', 'images/sprites/samus.png', 40, 50, 20,30);
 
   },
 
