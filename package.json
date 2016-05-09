@@ -1,22 +1,23 @@
 {
-  "version": "0.0.0",
-  "name": "baseinbase",
-  "version": "0.0.0",
-  "author": "",
-  "license": "MIT",
-  
-  "repository": "sanderdrummer/baseInBase",
-  "author": "sanderdrummer",
-  
+  "name": "baseInBase",
+  "version": "1.0.0",
+  "description": "TopDown RPG TD Game",
+  "contributors": [
+    {
+      "name": "Tobias Pickel"
+    }
+  ],
+  "license": "ISC",
   "dependencies": {
-    "browserify": "*",
-    "gulp": "*",
-    "gulp-connect": "*",
-    "gulp-livereload": "*",
-    "gulp-rsync": "*",
-    "gulp-util": "*",
-    "phaser": "*",
-    "vinyl-source-stream": "*",
-    "watchify": "*"
+    "typescript": "^1.7.5",
+    "webpack": "^1.12.11"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.7.2"
   }
 }
