@@ -8,7 +8,7 @@ class Player extends ex.Actor {
 	velocity: number;
 	constructor(x:number, y:number, width:number, height:number, color:ex.Color) {
 		super(x, y, width, height, color);
-		
+
 		// physics
 		this.velocity = 1;
 
@@ -29,30 +29,7 @@ class Player extends ex.Actor {
 	update(engine: ex.Engine, delta) {
 		super.update(engine, delta);
 
-		if (engine.input.keyboard.isHeld(ex.Input.Keys.W) ||
-			engine.input.keyboard.isHeld(ex.Input.Keys.Up)) {
-			this.y -= 1 * this.velocity;
-		}
-		if (engine.input.keyboard.isHeld(ex.Input.Keys.S) ||
-			engine.input.keyboard.isHeld(ex.Input.Keys.Down)) {
-			this.y += 1 * this.velocity;
-		}
-		if (engine.input.keyboard.isHeld(ex.Input.Keys.A) ||
-			engine.input.keyboard.isHeld(ex.Input.Keys.Left)) {
-			this.x -= 1 * this.velocity;
-		}
-		if (engine.input.keyboard.isHeld(ex.Input.Keys.D) ||
-			engine.input.keyboard.isHeld(ex.Input.Keys.Right)) {
-			this.x += 1 * this.velocity;
-		}
-
-		if (engine.input.keyboard.isHeld(ex.Input.Keys.V)) {
-			this.velocity = this.velocity < 4 ? 
-				this.velocity * 1.1 : this.velocity ;
-		} else {
-			this.velocity = this.velocity > 1 ?
-				this.velocity / 1.1 : this.velocity;
-		}
+        this.controller.handleMovement(engine, this);
 
 	}
 }
