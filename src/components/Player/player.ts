@@ -32,6 +32,29 @@ class Player extends ex.Actor {
         this.controller.handleMovement(engine, this);
 
 	}
+
+   public draw(ctx: CanvasRenderingContext2D, delta: number): void {
+
+        this.drawGlow(ctx, delta);
+
+        super.draw(ctx, delta);
+    }
+
+    private drawGlow(ctx: CanvasRenderingContext2D, delta: number): void {
+
+        // create radial gradient
+        var grd = ctx.createRadialGradient(this.getCenter().x, this.getCenter().y, 10, this.getCenter().x, this.getCenter().y, 180);
+
+        grd.addColorStop(0, 'rgba(255,255,255,0.3)');
+        grd.addColorStop(1, 'rgba(0,0,0,0.0)');
+
+        ctx.fillStyle = grd;
+        ctx.beginPath();
+
+        ctx.arc(this.getCenter().x, this.getCenter().y, 180, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
 }
 
 export = Player;
