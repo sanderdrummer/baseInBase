@@ -17,7 +17,7 @@ class Guard extends ex.Actor {
         this.travelVector = new ex.Vector(1, 0);
 
         // set collisions active
-        this.collisionType = ex.CollisionType.Active;
+        this.collisionType = ex.CollisionType.Passive;
     }
 
     handleKeyInput(evtObj: ex.GameEvent) {

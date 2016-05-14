@@ -30,6 +30,7 @@ class Player extends ex.Actor {
 		super.update(engine, delta);
 
         this.controller.handleMovement(engine, this);
+        this.controller.handleConstruction(engine, this);
 
 	}
 
@@ -45,7 +46,7 @@ class Player extends ex.Actor {
         // create radial gradient
         var grd = ctx.createRadialGradient(this.getCenter().x, this.getCenter().y, 10, this.getCenter().x, this.getCenter().y, 180);
 
-        grd.addColorStop(0, 'rgba(255,255,255, 1)');
+        grd.addColorStop(0, 'rgba(255,255,255, 0.9)');
         grd.addColorStop(1, 'rgba(0,0,0,0.0)');
 
         ctx.fillStyle = grd;
@@ -55,6 +56,9 @@ class Player extends ex.Actor {
         ctx.arc(this.getCenter().x, this.getCenter().y, 180, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
+
+        ctx.fillStyle = "orange";
+        ctx.fillRect(1000, 1000, 1000, 1000);
     }
 }
 

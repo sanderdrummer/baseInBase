@@ -1,13 +1,15 @@
 ///<reference path="../../../dist/Excalibur.d.ts" />
 
 import Player = require('./player');
+import TowerFactory = require('../Tower/towerFactory');
 
 class PlayerController {
 	engine: ex.Engine;
+	towerFactory: TowerFactory;
 
 	constructor(engine:ex.Engine) {
 		this.engine = engine;
-		console.log(this);
+		this.towerFactory = new TowerFactory(engine);
 	}
 
     handleMovement(engine, player:Player) {
@@ -36,6 +38,12 @@ class PlayerController {
             player.velocity = player.velocity > 1 ?
                 player.velocity / 1.05 : player.velocity;
         }
+    }
+
+    handleConstruction(engine:ex.Engine, player:Player) {
+    	if (engine.input.keyboard.wasPressed(ex.Input.Keys.C)) {
+			this.towerFactory.addTower(player.x + 20, player.y + 20);
+    	}
     }
 }
 
