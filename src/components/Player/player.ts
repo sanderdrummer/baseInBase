@@ -45,12 +45,13 @@ class Player extends ex.Actor {
         // create radial gradient
         var grd = ctx.createRadialGradient(this.getCenter().x, this.getCenter().y, 10, this.getCenter().x, this.getCenter().y, 180);
 
-        grd.addColorStop(0, 'rgba(255,255,255,0.3)');
+        grd.addColorStop(0, 'rgba(255,255,255, 1)');
         grd.addColorStop(1, 'rgba(0,0,0,0.0)');
 
         ctx.fillStyle = grd;
         ctx.beginPath();
-
+        ctx.globalCompositeOperation = 'xor';
+			
         ctx.arc(this.getCenter().x, this.getCenter().y, 180, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();

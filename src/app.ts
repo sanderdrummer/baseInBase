@@ -11,6 +11,7 @@ let game = new ex.Engine({
 	width: 800,
 	height: 600
 });
+game.backgroundColor = ex.Color.Black;
 
 var player = new Player(100, game.getHeight() - 40, 20, 20, ex.Color.Red);
 var guard = new Guard(150, game.getHeight() - 80, 25, 25, ex.Color.Yellow);
